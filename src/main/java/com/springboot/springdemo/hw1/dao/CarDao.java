@@ -31,6 +31,7 @@ public class CarDao {
         return car;
     }
 
+    @Transactional
     public Car deleteById(int id) {
         Car car = entityManager.find(Car.class, id);
         entityManager.remove(car);
