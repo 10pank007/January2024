@@ -1,13 +1,17 @@
 package com.springboot.springdemo.hw1.dao;
 
+
 import com.springboot.springdemo.hw1.entity.Car;
 import jakarta.persistence.EntityManager;
+
+
 import jakarta.persistence.TypedQuery;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+
 
 @Repository
 @RequiredArgsConstructor
