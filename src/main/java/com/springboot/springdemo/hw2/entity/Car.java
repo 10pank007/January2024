@@ -8,7 +8,6 @@ import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
-import org.springframework.stereotype.Component;
 
 @Entity
 @Data
@@ -17,7 +16,6 @@ public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
     @NotBlank(message = "model can't be blank")
     private String model;
     @NotBlank(message = "producer can't be blank")

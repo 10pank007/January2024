@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class CarMapper {
-    public static CarDTO toCarDTO(Car car) {
+    public CarDTO toCarDTO(Car car) {
         return CarDTO.builder()
                 .id(car.getId())
                 .power(car.getPower())

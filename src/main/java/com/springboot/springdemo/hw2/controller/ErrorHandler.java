@@ -12,7 +12,8 @@ public class ErrorHandler {
 
     @ExceptionHandler({MethodArgumentNotValidException.class})
     public ResponseEntity<ErrorDTO> handleNotValidException(MethodArgumentNotValidException exception) {
-        String details = exception.getMessage();
+        //String details = exception.getMessage();
+        String details = exception.getFieldError().getDefaultMessage();
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
                 .body(ErrorDTO.builder()

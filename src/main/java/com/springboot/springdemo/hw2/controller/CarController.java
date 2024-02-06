@@ -18,8 +18,6 @@ import java.util.List;
 @RequestMapping("/cars")
 @RequiredArgsConstructor
 public class CarController {
-    private final CarRepository carRepository;
-    private final CarMapper carMapper;
     private final CarService carService;
 
     @JsonView(View.Level3.class)
@@ -35,8 +33,8 @@ public class CarController {
     }
 
     @PostMapping
-    public ResponseEntity<CarDTO> createCar(@RequestBody @Valid Car car ) {
-        return carService.postCar(car);
+    public ResponseEntity<CarDTO> createCar(@RequestBody @Valid CarDTO carDTO ) {
+        return carService.postCar(carDTO);
     }
 
     @DeleteMapping("/{id}")
@@ -53,7 +51,5 @@ public class CarController {
     @JsonView(View.Level2.class)
     @GetMapping("/producer/{value}")
     public ResponseEntity<List<CarDTO>> getCarByProducerValue(@PathVariable String value) {
-        return ResponseEntity.ok(carService.getAllProductsByProducer(value));    }
-
-
+        return ResponseEntity.ok(carService.getAllProductsByProducer(value));}
 }
